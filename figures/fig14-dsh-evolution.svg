@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1060 450" width="1060" height="450" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#2563EB"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#0D9488"/>
+    </marker>
+    <marker id="arrow-orange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#D97706"/>
+    </marker>
+  </defs>
+
+  <rect width="1060" height="450" fill="#FFFFFF"/>
+
+  <!-- Header -->
+  <text x="32" y="34" font-size="18.5" font-weight="700" fill="#0F172A">基于 DeepSeek Harness 基线的三层改造结构与上游演进对照</text>
+  <text x="32" y="56" font-size="12.5" fill="#475569">左：固定 0.1.0-rc.5 基线的三层改造优先级；右：与上游后续版本（0.1.3 → 0.2.2-rc.1）的接口复核及 43 条补丁归类对照</text>
+
+  <!-- Left Container: 3-Layer Customization Architecture (x=32..486, width=454, y=74..424) -->
+  <rect x="32" y="74" width="454" height="350" rx="10" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.3"/>
+  <text x="48" y="100" font-size="14" font-weight="700" fill="#1E293B">(a) 服务端改造的三层边界（基线 0.1.0-rc.5）</text>
+
+  <!-- Layer 1: Replace 5 Providers (x=48..470, width=422, y=114..202) -->
+  <rect x="48" y="114" width="422" height="88" rx="8" fill="#EFF6FF" stroke="#60A5FA" stroke-width="1.4"/>
+  <text x="64" y="136" font-size="13" font-weight="700" fill="#1E3A8A">1. 优先替换扩展实现（5 个 Service Provider）</text>
+  <text x="64" y="156" font-size="10.2" fill="#1D4ED8" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">sessionPersistence · storage · fs · sandbox · credentials</text>
+  <text x="64" y="176" font-size="11.2" fill="#475569">状态与事件落盘 MySQL；挂载 /workspace、/preset、/tmp/session</text>
+  <text x="64" y="193" font-size="11" fill="#64748B">工具子进程套入 Linux Bubblewrap；能力包仅保存凭证名称引用</text>
+
+  <!-- Layer 2: Add 4 External Services (x=48..470, width=422, y=214..302) -->
+  <rect x="48" y="214" width="422" height="88" rx="8" fill="#F0FDFA" stroke="#5EEAD4" stroke-width="1.4"/>
+  <text x="64" y="236" font-size="13" font-weight="700" fill="#115E59">2. 其次外围新增治理服务（4 个宿主插件服务）</text>
+  <text x="64" y="256" font-size="9.5" fill="#0F766E" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">preset-release · candidate_write_gate · egress_gateway · evaluation</text>
+  <text x="64" y="276" font-size="11.2" fill="#475569">承载版本冻结与 CAS 指针切换、多实例 90s 写租约与栅栏令牌复核</text>
+  <text x="64" y="293" font-size="11" fill="#64748B">TLS 终止高熵占位符代填（刷新根 CA / 放行 trustd）及成对评估</text>
+
+  <!-- Layer 3: 43 Registered Kernel Patches (x=48..470, width=422, y=314..406) -->
+  <rect x="48" y="314" width="422" height="92" rx="8" fill="#FFF7ED" stroke="#FDBA74" stroke-width="1.4"/>
+  <text x="64" y="336" font-size="13" font-weight="700" fill="#9A3412">3. 最后修改内核并强制登记（43 条补丁 P01–P43）</text>
+  <text x="64" y="356" font-size="11.2" fill="#C2410C">仅在原生接口签名未覆盖多租户或存在通用性能/边界缺陷时动内核</text>
+  <text x="64" y="376" font-size="11.2" fill="#475569">逐条登记修改文件与回归测试，架构测试校验未登记改动直接阻断构建</text>
+  <text x="64" y="394" font-size="11" fill="#64748B">支撑后续按清册核对上游演进并控制内核升级迁移成本</text>
+
+  <!-- Right Container: Upstream Evolution Comparison (x=524..1028, width=504, y=74..424) -->
+  <rect x="524" y="74" width="504" height="350" rx="10" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.3"/>
+  <text x="540" y="100" font-size="14" font-weight="700" fill="#1E293B">(b) 与 DSH 上游演进（0.1.3 → 0.2.2-rc.1）的对照</text>
+
+  <!-- Right Box 1: Plugin Adoption & Seam Alignment (x=540..1012, width=472, y=114..202) -->
+  <rect x="540" y="114" width="472" height="88" rx="8" fill="#FFFFFF" stroke="#5EEAD4" stroke-width="1.4"/>
+  <rect x="552" y="126" width="128" height="20" rx="4" fill="#F0FDFA" stroke="#99F6E4" stroke-width="1"/>
+  <text x="616" y="140" font-size="11.5" font-weight="700" fill="#0F766E" text-anchor="middle">插件借鉴与契约印证</text>
+  <text x="690" y="140" font-size="11.5" font-weight="600" fill="#334155">吸收上游新增工具语义，印证落盘对账与投影分离</text>
+  <text x="552" y="164" font-size="11" fill="#475569">· <tspan font-weight="600" fill="#1E293B">present 交付工具</tspan>：借鉴 0.2.1 新增参数与预览语义，按多逻辑根重写权限校验</text>
+  <text x="552" y="184" font-size="11" fill="#475569">· <tspan font-weight="600" fill="#1E293B">落盘对账与投影</tspan>：上游重构 SessionHandle.flush、schedule 回执与会话投影</text>
+
+  <!-- Right Box 2: 17 Enterprise-Specific Patches (x=540..1012, width=472, y=214..282) -->
+  <rect x="540" y="214" width="472" height="68" rx="8" fill="#FFFFFF" stroke="#93C5FD" stroke-width="1.3"/>
+  <rect x="552" y="226" width="128" height="20" rx="4" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1"/>
+  <text x="616" y="240" font-size="11.5" font-weight="700" fill="#1D4ED8" text-anchor="middle">补丁：17 条企业特有</text>
+  <text x="690" y="240" font-size="11.5" font-weight="600" fill="#334155">源于多租户服务端托管约束，上游单机版无对应需求</text>
+  <text x="552" y="265" font-size="11" fill="#475569">覆盖多租户会话可见性隐藏、逻辑根路径边界、部署侧 maximumMode 上限与输出脱敏</text>
+
+  <!-- Right Box 3: 26 Convergent Issues (x=540..1012, width=472, y=294..406) -->
+  <rect x="540" y="294" width="472" height="112" rx="8" fill="#FFFFFF" stroke="#FDBA74" stroke-width="1.4"/>
+  <rect x="552" y="306" width="128" height="20" rx="4" fill="#FFF7ED" stroke="#FED7AA" stroke-width="1"/>
+  <text x="616" y="320" font-size="11.5" font-weight="700" fill="#B45309" text-anchor="middle">补丁：26 条共性收敛</text>
+  <text x="690" y="320" font-size="11.5" font-weight="600" fill="#334155">双方在不互通代码下各自遇到并解决，并行修复或反向取舍</text>
+  <text x="552" y="343" font-size="11" fill="#475569">· <tspan font-weight="600" fill="#1E293B">并行修复</tspan>：流式工具调用空分片覆盖非空 id/name（P09）、侧栏深层会话定位（P05）、</text>
+  <text x="562" y="361" font-size="11" fill="#475569">静态资源 ETag/304 缓存（P40/P41，0.2.2 落地）及 FTS5 空删全表扫描优化（P12）</text>
+  <text x="552" y="380" font-size="11" fill="#475569">· <tspan font-weight="600" fill="#1E293B">不同取舍</tspan>：千级冷会话列表（上游客户端水位折叠 vs 本平台服务端投影 + SQL 分页）；</text>
+  <text x="562" y="397" font-size="11" fill="#475569">沙箱提权（上游 approveEscalation 逐级审批 vs 本平台 maximumMode 上限，正交叠加）</text>
+
+  <!-- Orthogonal Non-Crossing Connectors between (a) and (b) in channel x=470..540 -->
+  <path d="M 470 158 L 538 158" stroke="#0D9488" stroke-width="1.6" fill="none" marker-end="url(#arrow-green)"/>
+  <path d="M 470 258 L 498 258 L 498 158 L 538 158" stroke="#0D9488" stroke-width="1.5" stroke-dasharray="4 3" fill="none"/>
+
+  <path d="M 470 360 L 510 360 L 510 248 L 538 248" stroke="#2563EB" stroke-width="1.5" stroke-dasharray="4 3" fill="none" marker-end="url(#arrow-blue)"/>
+  <path d="M 470 360 L 538 360" stroke="#D97706" stroke-width="1.6" fill="none" marker-end="url(#arrow-orange)"/>
+</svg>
