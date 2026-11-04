@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1060 580" width="1060" height="580" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif">
+  <defs>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#2563EB"/>
+    </marker>
+    <marker id="arrow-gray" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#64748B"/>
+    </marker>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#0D9488"/>
+    </marker>
+  </defs>
+
+  <rect width="1060" height="580" fill="#FFFFFF"/>
+
+  <!-- Top: Digital Employee Management Entity (y=20..90) -->
+  <rect x="24" y="20" width="1012" height="70" rx="10" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.2"/>
+  <text x="44" y="47" font-size="15" font-weight="700" fill="#0F172A">数字员工（岗位管理实体）</text>
+  <text x="44" y="70" font-size="12.5" fill="#475569">分离管理：岗位身份（职责与权限） · 能力版本（不可变版本 R0/R1） · 执行绑定（快照与记录）</text>
+
+  <rect x="748" y="30" width="272" height="50" rx="8" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.2"/>
+  <text x="884" y="51" font-size="13.5" font-weight="700" fill="#1D4ED8" text-anchor="middle">活动发布指针 → R1</text>
+  <text x="884" y="69" font-size="11.5" fill="#475569" text-anchor="middle">CAS（比较并交换）更新 · 空闲轮次切换</text>
+
+  <!-- Middle: SEE Core Modules [2] [3] [4] (y=190..294) -->
+  <rect x="24" y="196" width="184" height="92" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"/>
+  <text x="116" y="222" font-size="13" font-weight="700" fill="#1E293B" text-anchor="middle">[2] 触发输入（Trigger）</text>
+  <rect x="40" y="233" width="152" height="22" rx="4" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="116" y="248" font-size="11.5" fill="#334155" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">conversation</text>
+  <rect x="40" y="259" width="152" height="22" rx="4" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="116" y="274" font-size="11.5" fill="#334155" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">event / schedule</text>
+
+  <!-- [2] Service -->
+  <rect x="242" y="190" width="232" height="104" rx="10" fill="#EFF6FF" stroke="#60A5FA" stroke-width="1.5"/>
+  <text x="358" y="222" font-size="14" font-weight="700" fill="#1E3A8A" text-anchor="middle">[2] 持续服务（Service）</text>
+  <text x="358" y="245" font-size="12" fill="#2563EB" text-anchor="middle">加载已发布版本处理工作</text>
+  <text x="358" y="267" font-size="11.5" fill="#475569" text-anchor="middle">持久接纳回执 · TaskRun · 中断恢复</text>
+
+  <!-- [3] Evolution (x=504..728, width=224) -->
+  <rect x="504" y="190" width="224" height="104" rx="10" fill="#FFF7ED" stroke="#FDBA74" stroke-width="1.3"/>
+  <text x="616" y="222" font-size="14" font-weight="700" fill="#9A3412" text-anchor="middle">[3] 能力演进（Evolution）</text>
+  <text x="616" y="245" font-size="12" fill="#C2410C" text-anchor="middle">Creator 候选编辑与写租约</text>
+  <text x="616" y="267" font-size="11.5" fill="#475569" text-anchor="middle">提案冻结 · 版本发布 · 空闲切换</text>
+
+  <!-- [4] Evaluation (x=820..1036, width=216; 92px gap from [3]) -->
+  <rect x="820" y="190" width="216" height="104" rx="10" fill="#F0FDFA" stroke="#5EEAD4" stroke-width="1.3"/>
+  <text x="928" y="222" font-size="14" font-weight="700" fill="#115E59" text-anchor="middle">[4] 独立评估（Evaluation）</text>
+  <text x="928" y="245" font-size="12" fill="#0D9488" text-anchor="middle">诊断集与留出集（Holdout）隔离</text>
+  <text x="928" y="267" font-size="11.5" fill="#475569" text-anchor="middle">运行诊断 · 成对评估 · 验证绑定</text>
+
+  <!-- Shared DSH Execution Base -->
+  <rect x="242" y="324" width="794" height="44" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.2"/>
+  <text x="639" y="351" font-size="13" font-weight="600" fill="#334155" text-anchor="middle">共享 DeepSeek Harness 执行基础（Agent Loop · Agent preset · Cordis 插件宿主）</text>
+
+  <!-- Bottom: [5] Storage & [6] Access Control -->
+  <rect x="242" y="398" width="382" height="90" rx="10" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.3"/>
+  <text x="433" y="427" font-size="14.5" font-weight="700" fill="#1E293B" text-anchor="middle">[5] 存算分离与历史读取</text>
+  <text x="433" y="449" font-size="12" fill="#64748B" text-anchor="middle">数据库保存 SessionEvent / TaskRun / 发布指针</text>
+  <text x="433" y="469" font-size="12" fill="#64748B" text-anchor="middle">对象存储内容寻址按需重建 · CQRS 按用途读取投影</text>
+
+  <rect x="654" y="398" width="382" height="90" rx="10" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.3"/>
+  <text x="845" y="427" font-size="14.5" font-weight="700" fill="#1E293B" text-anchor="middle">[6] 访问控制、沙箱与凭证</text>
+  <text x="845" y="449" font-size="12" fill="#64748B" text-anchor="middle">模型外权限与范围检查 · Bubblewrap 工具沙箱</text>
+  <text x="845" y="469" font-size="12" fill="#64748B" text-anchor="middle">network 占位符 TLS 代填网关 · env 凭证交付</text>
+
+  <!-- External Systems (Dashed Box) -->
+  <rect x="24" y="398" width="184" height="90" rx="8" fill="#FFFFFF" stroke="#94A3B8" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <text x="116" y="436" font-size="14" font-weight="700" fill="#334155" text-anchor="middle">企业外部系统</text>
+  <text x="116" y="458" font-size="12" fill="#64748B" text-anchor="middle">业务接口 / 代码仓 / IM</text>
+
+  <!-- Orthogonal Connections (3 separated horizontal tracks in y=90..190 corridor) -->
+  <!-- Input -> Service -->
+  <path d="M 208 242 L 240 242" stroke="#2563EB" stroke-width="1.6" fill="none" marker-end="url(#arrow-blue)"/>
+
+  <!-- Track 1 (y=110): Active Pointer -> Service -->
+  <path d="M 780 80 L 780 110 L 340 110 L 340 188" stroke="#2563EB" stroke-width="1.5" stroke-dasharray="5 3" fill="none" marker-end="url(#arrow-blue)"/>
+  <rect x="440" y="99" width="240" height="20" rx="4" fill="#FFFFFF"/>
+  <text x="560" y="113" font-size="11.5" fill="#1D4ED8" text-anchor="middle">在途轮次保留 R0，空闲轮次切换 R1</text>
+
+  <!-- Track 2 (y=138): Evolution -> Active Pointer -->
+  <path d="M 616 190 L 616 138 L 916 138 L 916 82" stroke="#2563EB" stroke-width="1.6" fill="none" marker-end="url(#arrow-blue)"/>
+  <rect x="698" y="127" width="144" height="20" rx="4" fill="#FFFFFF"/>
+  <text x="770" y="141" font-size="11.5" fill="#1D4ED8" text-anchor="middle">CAS 更新发布指针</text>
+
+  <!-- Track 3 (y=166): Service -> Evaluation (with clean bridge over x=616) -->
+  <path d="M 412 190 L 412 166 L 610 166 A 6 6 0 0 1 622 166 L 928 166 L 928 188" stroke="#0D9488" stroke-width="1.4" fill="none" marker-end="url(#arrow-green)"/>
+  <rect x="660" y="155" width="236" height="20" rx="4" fill="#FFFFFF"/>
+  <text x="778" y="169" font-size="11" fill="#0D9488" text-anchor="middle">运行记录（TaskRun / SessionEvent）</text>
+
+  <!-- Evolution -> Evaluation (冻结候选, across 92px gap x=728..820) -->
+  <path d="M 728 224 L 818 224" stroke="#0D9488" stroke-width="1.5" fill="none" marker-end="url(#arrow-green)"/>
+  <text x="774" y="214" font-size="11.5" fill="#0D9488" text-anchor="middle">冻结候选</text>
+
+  <!-- Evaluation -> Evolution (验证 / 诊断, across 92px gap x=820..728) -->
+  <path d="M 820 258 L 730 258" stroke="#0D9488" stroke-width="1.4" stroke-dasharray="4 3" fill="none" marker-end="url(#arrow-green)"/>
+  <text x="774" y="275" font-size="11.5" fill="#0D9488" text-anchor="middle">验证 / 诊断</text>
+
+  <!-- SEE -> Shared DSH Base -->
+  <path d="M 358 294 L 358 322" stroke="#64748B" stroke-width="1.4" fill="none" marker-end="url(#arrow-gray)"/>
+  <path d="M 616 294 L 616 322" stroke="#64748B" stroke-width="1.4" fill="none" marker-end="url(#arrow-gray)"/>
+  <path d="M 928 294 L 928 322" stroke="#64748B" stroke-width="1.4" fill="none" marker-end="url(#arrow-gray)"/>
+
+  <!-- Shared DSH Base -> [5] & [6] -->
+  <path d="M 433 368 L 433 396" stroke="#64748B" stroke-width="1.5" fill="none" marker-end="url(#arrow-gray)"/>
+  <path d="M 845 368 L 845 396" stroke="#64748B" stroke-width="1.5" fill="none" marker-end="url(#arrow-gray)"/>
+
+  <!-- [6] -> External Systems -->
+  <path d="M 654 470 L 638 470 L 638 510 L 116 510 L 116 490" stroke="#64748B" stroke-width="1.4" stroke-dasharray="4 3" fill="none" marker-end="url(#arrow-gray)"/>
+  <rect x="200" y="500" width="356" height="20" rx="4" fill="#FFFFFF"/>
+  <text x="378" y="514" font-size="11.5" fill="#64748B" text-anchor="middle">受控出站调用与结果交付（沙箱隔离 + 凭证代填网关）</text>
+
+  <!-- Legend -->
+  <line x1="24" y1="554" x2="60" y2="554" stroke="#2563EB" stroke-width="1.6"/>
+  <text x="68" y="558" font-size="12" fill="#475569">主执行与版本发布路径</text>
+  <line x1="218" y1="554" x2="254" y2="554" stroke="#0D9488" stroke-width="1.6"/>
+  <text x="262" y="558" font-size="12" fill="#475569">评估材料与验证绑定</text>
+  <line x1="404" y1="554" x2="440" y2="554" stroke="#64748B" stroke-width="1.4" stroke-dasharray="4 3"/>
+  <text x="448" y="558" font-size="12" fill="#475569">按需诊断 / 条件切换 / 外部边界</text>
+</svg>
